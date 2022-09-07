@@ -1537,6 +1537,7 @@ blockquote {
   border-left: 3px solid #49b1f5;
   background-color: var(--blockquote-bg);
   color: var(--blockquote-color);
+  text-indent: 2em;
 }
 blockquote footer cite:before {
   padding: 0 5px;
@@ -1544,6 +1545,9 @@ blockquote footer cite:before {
 }
 blockquote > :last-child {
   margin-bottom: 0 !important;
+}
+p {
+  text-indent: 2em;
 }
 :root {
   --hl-color: #8f93a2;
@@ -5241,6 +5245,7 @@ blockquote.pullquote.right {
   position: relative;
   margin: 0 0 20px;
   padding: 15px;
+  text-indent: 2em;
   border-radius: 3px;
 }
 .note.icon-padding {
