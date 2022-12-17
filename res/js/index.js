@@ -1,5 +1,35 @@
 "use strict"
 
+function Toast({
+  text,
+  duration,
+  type,
+} = {
+  text: string,
+  duration: number,
+  type: 'success' | 'error' | 'warn',
+}){
+  const node = document.getElementById('jd-toast');
+  if (node) document.body.removeChild(node);
+  const m = document.createElement('div');
+  const toastId = Date.now() + '';
+  m.setAttribute('toastId', toastId);
+  m.className = 'Toast';
+  m.id = 'jd-toast';
+  m.innerHTML = `<div><p>${text}</p><div>`;
+  document.body.appendChild(m);
+  setTimeout(function() {
+    const d = 0.5;
+    m.style.webkitTransition =  '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+    m.style.opacity = '0';
+    setTimeout(function() {
+      const node1 = document.getElementById('jd-toast');
+      if (node1?.getAttribute('toastId') == toastId)
+        document.body.removeChild(node1);
+    }, d * 1000);
+  }, duration || 2000);
+}
+
 function CopyText(text){
   const clip = navigator.clipboard;
   if(!text){
@@ -14,7 +44,7 @@ function CopyText(text){
       if(window.via){
         window.via.toast(con);
       } else {
-        $.toast(con);
+        Toast({text: con});
       }
     }
   }
