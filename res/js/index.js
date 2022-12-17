@@ -21,6 +21,13 @@ function CopyText(text){
     });
 }
 
-function legado(url){
-  open(`legado://import/bookSource?src=${url}`)
+function legado(url, beh){
+  if(url.startsWith("/")){
+    url = `${location.protocol}//${location.hostname}:${location.port}${url}`;
+  }
+  if(beh == "copy"){
+    CopyText(url);
+  } else {
+    open(`legado://import/bookSource?src=${url}`)
+  }
 }
