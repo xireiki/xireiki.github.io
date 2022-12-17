@@ -25,7 +25,7 @@ function CopyText(text){
           }
         });
         clipboardjs.on("success", () => {
-          alert("已复制文本到剪贴板");
+          // alert("已复制文本到剪贴板");
           cb.remove();
         });
         clipboardjs.on("error", () => {
