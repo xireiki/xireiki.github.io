@@ -23,9 +23,8 @@ function CopyText(text){
 
 function legado(url, beh){
   if(url.startsWith("/")){
-    let port = location.port;
-    if(port == "80" || port == "443") port = "";
-    else port = `:${port}`;
+    let port;
+    ((location.protocol == "http:" && location.port == "80") || (location.protocol == "https:" && location.port == "443") || location.port == "") ? port = "" : port = `:${location.port}`;
     url = `${location.protocol}//${location.hostname}${port}${url}`;
   }
   if(beh == "copy"){
