@@ -14,7 +14,25 @@ function CopyText(text){
     })
     .catch(err => {
       if(err.name == "NotAllowedError"){
-        alert("请不要使用套壳浏览器，我们不支持在这类浏览器中复制链接");
+        let cb = document.createElement("button");
+        cb.id = "cb";
+        cb.style.width = "1px";
+        cb.style.height = "1px";
+        document.body.appendChild(cb);
+        let clipboardjs = new ClipboardJS("#cb", {
+          text: function(){
+            return text
+          }
+        });
+        clipboardjs.on("success", () => {
+          alert("已复制文本到剪贴板");
+          cb.remove();
+        });
+        clipboardjs.on("error", () => {
+          alert("复制失败,请检查您的浏览器设置");
+          cb.remove();
+        });
+        document.getElementById("cb").click();
       } else {
         alert("复制失败：" + err);
       }
