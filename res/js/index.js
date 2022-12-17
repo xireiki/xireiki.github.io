@@ -20,3 +20,7 @@ function CopyText(text){
       }
     });
 }
+
+function legado(url){
+  open(`legado://import/bookSource?src=${url}`)
+}
