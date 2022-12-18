@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>书源 on XiReiki</title>
-    <link>https://xireiki.netlify.app/tags/%E4%B9%A6%E6%BA%90/</link>
+    <link>https://ebrill.netlify.app/tags/%E4%B9%A6%E6%BA%90/</link>
     <description>Recent content in 书源 on XiReiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 03 Dec 2022 15:07:34 +0000</lastBuildDate><atom:link href="https://xireiki.netlify.app/tags/%E4%B9%A6%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 15:07:34 +0000</lastBuildDate><atom:link href="https://ebrill.netlify.app/tags/%E4%B9%A6%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>番茄小说书源分享</title>
-      <link>https://xireiki.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</link>
+      <link>https://ebrill.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</link>
       <pubDate>Sat, 03 Dec 2022 15:07:34 +0000</pubDate>
       
-      <guid>https://xireiki.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://ebrill.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</guid>
       <description>书源 分享一下自己修改过的 番茄免费小说 的书源。
 导入 一键导入书源
 复制网络导入&amp;amp;规则订阅链接 如果复制失败，也可以手动复制: https://xireiki.netlify.app/file/bookSource.json

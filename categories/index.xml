@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on XiReiki</title>
-    <link>https://xireiki.netlify.app/categories/</link>
+    <link>https://ebrill.netlify.app/categories/</link>
     <description>Recent content in Categories on XiReiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 03 Dec 2022 15:07:34 +0000</lastBuildDate><atom:link href="https://xireiki.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 15:07:34 +0000</lastBuildDate><atom:link href="https://ebrill.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>android</title>
-      <link>https://xireiki.netlify.app/categories/android/</link>
+      <link>https://ebrill.netlify.app/categories/android/</link>
       <pubDate>Sat, 03 Dec 2022 15:07:34 +0000</pubDate>
       
-      <guid>https://xireiki.netlify.app/categories/android/</guid>
+      <guid>https://ebrill.netlify.app/categories/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>番茄免费小说</title>
-      <link>https://xireiki.netlify.app/categories/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/</link>
+      <link>https://ebrill.netlify.app/categories/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/</link>
       <pubDate>Sat, 03 Dec 2022 15:07:34 +0000</pubDate>
       
-      <guid>https://xireiki.netlify.app/categories/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/</guid>
+      <guid>https://ebrill.netlify.app/categories/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>termux</title>
-      <link>https://xireiki.netlify.app/categories/termux/</link>
+      <link>https://ebrill.netlify.app/categories/termux/</link>
       <pubDate>Tue, 06 Sep 2022 21:49:20 +0000</pubDate>
       
-      <guid>https://xireiki.netlify.app/categories/termux/</guid>
+      <guid>https://ebrill.netlify.app/categories/termux/</guid>
       <description></description>
     </item>
     

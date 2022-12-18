@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>adb on XiReiki</title>
-    <link>https://xireiki.netlify.app/tags/adb/</link>
+    <link>https://ebrill.netlify.app/tags/adb/</link>
     <description>Recent content in adb on XiReiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Sep 2022 21:49:20 +0000</lastBuildDate><atom:link href="https://xireiki.netlify.app/tags/adb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 21:49:20 +0000</lastBuildDate><atom:link href="https://ebrill.netlify.app/tags/adb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rish &amp;&amp; rish-sui</title>
-      <link>https://xireiki.netlify.app/post/rishrish-sui/</link>
+      <link>https://ebrill.netlify.app/post/rishrish-sui/</link>
       <pubDate>Tue, 06 Sep 2022 21:49:20 +0000</pubDate>
       
-      <guid>https://xireiki.netlify.app/post/rishrish-sui/</guid>
+      <guid>https://ebrill.netlify.app/post/rishrish-sui/</guid>
       <description>还在为终端使用 rish 烦恼？
 来试试 rish 吧！（指软件包，我打包的）
 rish 有两个版本，Shizuku 版 和 Sui 。
