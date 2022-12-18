@@ -1,0 +1,97 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>XiReiki on XiReiki </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://xireiki.netlify.app/</link>
+    <language>zh-cn</language>
+    
+    
+    <updated>Sun, 18 Dec 2022 08:26:02 UTC</updated>
+    
+    <item>
+      <title>联系我</title>
+      <link>https://xireiki.netlify.app/contact/</link>
+      <pubDate>Sun, 18 Dec 2022 14:19:32 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/contact/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://xireiki.netlify.app/about/</link>
+      <pubDate>Sun, 18 Dec 2022 12:52:01 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/about/</guid>
+      <description> 平台 我的主页 GitHub 查看链接 Gitee 查看链接 bilibili 查看链接 推特(Twitter) 查看链接 </description>
+    </item>
+    
+    <item>
+      <title>阅读源</title>
+      <link>https://xireiki.netlify.app/post/booksource/</link>
+      <pubDate>Sun, 18 Dec 2022 08:26:02 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/post/booksource/</guid>
+      <description>导入源 我的书源
+时间 作者 导入 复制 2022/12/18 xireiki 导入 复制 2022/12/17 xireiki 导入 复制 2022/12/03 xireiki 导入 复制 我的订阅源
+时间 作者 导入 复制 2022/12/18 xireiki 导入 复制 更新内容 2022-12-18 添加 “菠萝包轻小说” 番茄小说 前往页面 关于小黑屋 点我前往查看 </description>
+    </item>
+    
+    <item>
+      <title>番茄小说书源分享</title>
+      <link>https://xireiki.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Sat, 03 Dec 2022 15:07:34 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/post/%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E4%B9%A6%E6%BA%90%E5%88%86%E4%BA%AB/</guid>
+      <description>书源 分享一下自己修改过的 番茄免费小说 的书源。
+导入 一键导入书源
+复制网络导入&amp;amp;规则订阅链接 如果复制失败，也可以手动复制: https://xireiki.netlify.app/file/bookSource.json
+点击前往我的书源
+功能 可正常使用发现、搜索，获取正文。
+问：关于添加不可搜索（被关小黑屋）的小说？ 回答一： 你需要先获取 root，打开路径为 /data/data/com.dragon.read/files/一串数字/reading_db_还是那一串数字 的文件，搜索你想添加的小说的书名。
+比如：泡泡浅色 的《妖魔复苏：变成萝莉金手指？》
+此时你会看到：
+其中作者名和书名间的数字是 bookid（书籍id），复制它！最后替换一下链接中的&amp;quot;书籍id&amp;quot;：https://api5-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&amp;amp;book_id=&amp;quot;书籍id&amp;quot;&amp;amp;iid=2665637677906061&amp;amp;aid=1967&amp;amp;app_name=novelapp&amp;amp;version_code=495
+替换后是：https://api5-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&amp;amp;book_id=7086301050801490956&amp;amp;iid=2665637677906061&amp;amp;aid=1967&amp;amp;app_name=novelapp&amp;amp;version_code=495
+把这个链接粘贴在阅读的如下位置，即可导入不可搜索的书籍。
+回答二 使用系统备份功能备份番茄免费小说，比如小米手机，备份后的文件在 MIUI/backups 里，解压后找到答1中的文件，复制bookid（书籍id）后与答1步骤一致。
+回答三 复制大佬分享的bookid（书籍id），然后替换链接，导入。
+注意 咱偷偷用！</description>
+    </item>
+    
+    <item>
+      <title>rish &amp;&amp; rish-sui</title>
+      <link>https://xireiki.netlify.app/post/rishrish-sui/</link>
+      <pubDate>Tue, 06 Sep 2022 21:49:20 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/post/rishrish-sui/</guid>
+      <description>还在为终端使用 rish 烦恼？
+来试试 rish 吧！（指软件包，我打包的）
+rish 有两个版本，Shizuku 版 和 Sui 。
+Shizuku 版的 rish 首先是 Shizuku 版的 Rish，软件包有以下命令: rish, rido, sui, shizuku
+命令介绍 命令 描述 rish 切换到 shizuku 的 shell，权限为激活使用的方法，比如使用 adb (包括无线调试) 激活，就是 shell 权限 rido rish -c &amp;quot;命令&amp;quot; 的包装，用于方便的不切换 shell 执行命令 sui 使用当前 Shell 切换到 rish (需要激活方式为Root，简单来说，你需要用 Root 激活 Shizuku) shizuku 老版本的终端调用方法，和 rido 类似 安装方法 终端添加软件源 ~ $ echo &amp;#34;deb [trusted=yes arch=all] https://dists.netlify.app termux extras&amp;#34; &amp;gt; $PREFIX/etc/apt/sources.list.d/xireiki.list 然后更新源 ~ $ apt update 最后安装 ~ $ apt install rish 各版本对应的 Sizuku 版本 rish Shizuku CPU 架构 1.</description>
+    </item>
+    
+    <item>
+      <title>Termux 软件包存储库</title>
+      <link>https://xireiki.netlify.app/post/termux%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AD%98%E5%82%A8%E5%BA%93/</link>
+      <pubDate>Tue, 06 Sep 2022 18:06:27 UTC</pubDate>
+      
+      <guid>https://xireiki.netlify.app/post/termux%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AD%98%E5%82%A8%E5%BA%93/</guid>
+      <description>起因 因为一些需要，我曾用自己匮乏的编程知识写过一些小工具。但是我担心放在 bin 目录时间长了会忘记哪些是自己写的，删除的时候不方便。
+也曾尝试过另外添加一个 PATH 目录用来存放自己的小工具。但是我有强迫症，每次看到我添加的 PATH 目录都忍不住想删除，正巧最近看到了 atilo 的做法，想着自己也弄一个软件源，可以用来分享自己的工具。
+同时，还解决了我的一些问题。
+步骤 第一步，安装 apt-ftparchive ~ $ apt update &amp;amp;&amp;amp; apt install apt-ftparchive 如果没有意外的话，这样就安装好了。
+第二步，生成软件包 先创建一个目录用来存放已经编译完成的文件，并进入这个目录。
+~ $ mkdir tool ~ $ cd tool 接下来创建 DEBIAN 目录，用来存放软件包的信息和脚本。
+注意，这个 DEBIAN 目录需要 0755 以上的权限，并且不能高于 0775 。
+我就不给它太高的权限了，给它最低的权限就够了。
+~/tool $ mkdir DEBIAN ~/tool $ chmod 755 DEBIAN 我先说一下 DEBIAN 目录下的文件都有哪些。
+DEBIAN 目录下有一个 control 文件和至多四个脚本文件。
+control control 文件用于写入安装包的识别信息，包括包名、版本、作者、简介等。没有严格的顺序要求。表格中列出常用的关键字和作用。control 文件最后需要添加一个空行。
+Name Description Package 软件名，dpkg -l 列出的名字 Version 版本号-修订号 Section 软件类型，比如 mail, test, x11 等 Priority 优先级/重要性，比如 optional 可选的 Architecture 软件架构，比如 x86, arm64 Depends 依赖环境，用 , 隔开，用(&amp;gt;=&amp;lt; )指定版本号 Suggests 推荐安装，指非必要依赖，可以提供更多功能 Maintainer 作者 &amp;lt;邮箱或者其他联系方式&amp;gt; Descritprion 简介，可以换行书写 额外脚本 DEBIAN 目录下最多可以放置四个可执行脚本，包括安装前执行的的 preinst、安装后执行的 postinst、卸载前执行的 prerm、卸载前执行的 postrm 四个脚本，它们都需要以 #!</description>
+    </item>
+    
+  </channel>
+</rss>
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>rish &amp;&amp; rish-sui - XiReiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link rel="canonical" href="https://xireiki.netlify.app/post/rishrish-sui/" />
+  <link rel="stylesheet" href="/res/css/index.css" />
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <link rel="stylesheet" type="text/css" href="https://xireiki.netlify.app//css/combined-min.css">
+  
+
+</head>
+<body class="">
+
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://xireiki.netlify.app/" class="site-title">XiReiki</a>
+      <nav class="site-nav right">
+      <a href="https://xireiki.netlify.app//about/">About</a>
+<a href="https://xireiki.netlify.app//tags/">Tags</a>
+<a href="https://xireiki.netlify.app//contact/">Contact</a>
+</form>
+
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</header>
+
+  <div class="post p2 p-responsive wrap" role="main">
+    <div class="measure">
+      <div class="post-header mb2">
+        <h1 class="py2">rish &amp;&amp; rish-sui</h1>
+        <span class="post-meta">Sep 6, 2022 </span><br>
+        
+      </div>
+
+      <article class="post-content">
+      <p>还在为终端使用 <code>rish</code> 烦恼？</p>
+<p>来试试 rish 吧！（指软件包，我打包的）</p>
+<p>rish 有两个版本，Shizuku 版 和 Sui 。</p>
+<h2 id="shizuku-版的-rish">Shizuku 版的 rish</h2>
+<p>首先是 Shizuku 版的 Rish，软件包有以下命令: <code>rish</code>, <code>rido</code>, <code>sui</code>, <code>shizuku</code></p>
+<h3 id="命令介绍">命令介绍</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">rish</td>
+<td style="text-align:center">切换到 shizuku 的 shell，权限为激活使用的方法，比如使用 adb (包括无线调试) 激活，就是 shell 权限</td>
+</tr>
+<tr>
+<td style="text-align:center">rido</td>
+<td style="text-align:center"><code>rish -c &quot;命令&quot;</code> 的包装，用于方便的不切换 shell 执行命令</td>
+</tr>
+<tr>
+<td style="text-align:center">sui</td>
+<td style="text-align:center">使用当前 Shell 切换到 rish (需要激活方式为Root，简单来说，你需要用 Root 激活 Shizuku)</td>
+</tr>
+<tr>
+<td style="text-align:center">shizuku</td>
+<td style="text-align:center">老版本的终端调用方法，和 <code>rido</code> 类似</td>
+</tr>
+</tbody>
+</table>
+<h3 id="安装方法">安装方法</h3>
+<ul>
+<li>终端添加软件源</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ echo <span style="color:#e6db74">&#34;deb [trusted=yes arch=all] https://dists.netlify.app termux extras&#34;</span> &gt; $PREFIX/etc/apt/sources.list.d/xireiki.list
+</span></span></code></pre></div><ul>
+<li>然后更新源</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ apt update
+</span></span></code></pre></div><ul>
+<li>最后安装</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ apt install rish
+</span></span></code></pre></div><h3 id="各版本对应的-sizuku-版本">各版本对应的 Sizuku 版本</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">rish</th>
+<th style="text-align:center">Shizuku</th>
+<th style="text-align:center">CPU 架构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1.0.0</td>
+<td style="text-align:center">12.9.1.r859.28c5098</td>
+<td style="text-align:center">aarch64(arm64), arm, x86, x86_64</td>
+</tr>
+</tbody>
+</table>
+<p>注意！！！！！！！版本不同请谨慎安装！！！</p>
+<h2 id="sui-版的-rish">Sui 版的 rish</h2>
+<p>接着是 Sui 版的 Rish，软件包有如下命令: rish、rido、sui</p>
+<h3 id="命令介绍-1">命令介绍</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">rish</td>
+<td style="text-align:center">切换到 Sui 的 shell，权限为 Root (不会吧，都用 Sui 了，怎么可能不是 Root)</td>
+</tr>
+<tr>
+<td style="text-align:center">rido</td>
+<td style="text-align:center"><code>rish -c &quot;命令&quot;</code> 的包装，用于方便的不切换 shell 执行命令</td>
+</tr>
+<tr>
+<td style="text-align:center">sui</td>
+<td style="text-align:center">使用当前 Shell 切换到 rish</td>
+</tr>
+</tbody>
+</table>
+<h3 id="安装方法-1">安装方法</h3>
+<ul>
+<li>终端添加软件源</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ echo <span style="color:#e6db74">&#34;deb [trusted=yes arch=all] https://dists.netlify.app termux extras&#34;</span> &gt; $PREFIX/etc/apt/sources.list.d/xireiki.list
+</span></span></code></pre></div><ul>
+<li>然后更新源</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ apt update
+</span></span></code></pre></div><ul>
+<li>最后安装</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ apt install rish-sui
+</span></span></code></pre></div><h3 id="各版本对应的-sui-版本">各版本对应的 Sui 版本</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">rish-sui</th>
+<th style="text-align:center">Shizuku</th>
+<th style="text-align:center">CPU 架构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1.0.0</td>
+<td style="text-align:center">v12.6.3</td>
+<td style="text-align:center">aarch64(arm64), arm, x86, x86_64</td>
+</tr>
+</tbody>
+</table>
+<p>注意！！！！！！！版本不同请谨慎安装！！！</p>
+
+      </article>
+
+       
+      <p class="post-meta">Tags:&nbsp;
+        
+            
+            <a href="https://xireiki.netlify.app//tags/linux">linux</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/android">android</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/root">root</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/adb">adb</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/termux">termux</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/shizuku">shizuku</a>
+        
+            ,&nbsp;
+            <a href="https://xireiki.netlify.app//tags/sui">sui</a>
+        
+      </p>
+       
+
+      
+
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="p2 wrap">
+        <div class="measure mt1 center">
+      <nav class="social-icons icons">
+<a class="fa fa-rss rss" href="/index.xml"></a>
+
+</nav>
+
+          <small>
+            Copyright &#169; 2017<br>
+            Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a> &amp; <a href="https://github.com/azmelanar/hugo-theme-pixyll" target="_blank">Pixyll</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+    <script src="/res/js/clipboard.min.js"></script>
+    <script src="/res/js/jquery-3.6.0.min.js"></script>
+    <script src="/res/js/index.js"></script>
+
+</body>
+</html>
+

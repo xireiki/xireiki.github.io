@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sui on XiReiki</title>
+    <link>https://xireiki.netlify.app/tags/sui/</link>
+    <description>Recent content in sui on XiReiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Sep 2022 21:49:20 +0000</lastBuildDate><atom:link href="https://xireiki.netlify.app/tags/sui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rish &amp;&amp; rish-sui</title>
+      <link>https://xireiki.netlify.app/post/rishrish-sui/</link>
+      <pubDate>Tue, 06 Sep 2022 21:49:20 +0000</pubDate>
+      
+      <guid>https://xireiki.netlify.app/post/rishrish-sui/</guid>
+      <description>还在为终端使用 rish 烦恼？
+来试试 rish 吧！（指软件包，我打包的）
+rish 有两个版本，Shizuku 版 和 Sui 。
+Shizuku 版的 rish 首先是 Shizuku 版的 Rish，软件包有以下命令: rish, rido, sui, shizuku
+命令介绍 命令 描述 rish 切换到 shizuku 的 shell，权限为激活使用的方法，比如使用 adb (包括无线调试) 激活，就是 shell 权限 rido rish -c &amp;quot;命令&amp;quot; 的包装，用于方便的不切换 shell 执行命令 sui 使用当前 Shell 切换到 rish (需要激活方式为Root，简单来说，你需要用 Root 激活 Shizuku) shizuku 老版本的终端调用方法，和 rido 类似 安装方法 终端添加软件源 ~ $ echo &amp;#34;deb [trusted=yes arch=all] https://dists.netlify.app termux extras&amp;#34; &amp;gt; $PREFIX/etc/apt/sources.list.d/xireiki.list 然后更新源 ~ $ apt update 最后安装 ~ $ apt install rish 各版本对应的 Sizuku 版本 rish Shizuku CPU 架构 1.</description>
+    </item>
+    
+  </channel>
+</rss>
