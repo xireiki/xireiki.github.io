@@ -82,15 +82,17 @@ function CopyText(text){
     });
 }
 
-function legado(url, beh){
+function legado(url, beh, path){
   if(url.startsWith("/")){
     let port;
     ((location.protocol == "http:" && location.port == "80") || (location.protocol == "https:" && location.port == "443") || location.port == "") ? port = "" : port = `:${location.port}`;
     url = `${location.protocol}//${location.hostname}${port}${url}`;
   }
+  beh ? beh : "open";
   if(beh == "copy"){
     CopyText(url);
-  } else {
-    open(`legado://import/bookSource?src=${url}`)
+  } else if(beh == "open"){
+    path ? path : "bookSource";
+    open(`legado://import/${path}?src=${url}`)
   }
 }
