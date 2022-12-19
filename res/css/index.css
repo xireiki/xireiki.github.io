@@ -19,3 +19,28 @@
 main p {
   text-indent: 2em;
 }
+
+.post-summary {
+  text-indent: 2em;
+}
+h1 + p {
+  text-indent: 2em;
+}
+h2 + p {
+  text-indent: 2em;
+}
+h3 + p {
+  text-indent: 2em;
+}
+h4 + p {
+  text-indent: 2em;
+}
+h5 + p {
+  text-indent: 2em;
+}
+h6 + p {
+  text-indent: 2em;
+}
+p + p {
+  text-indent: 2em;
+}

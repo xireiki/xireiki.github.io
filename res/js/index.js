@@ -96,3 +96,18 @@ function legado(url, beh, path){
     open(`legado://import/${path}?src=${url}`)
   }
 }
+
+// hugo 主页修复
+(function(){
+  if (location.pathname == "/"){
+    let summary = document.querySelectorAll("a.post-link")
+    for (let p of summary){
+      let t = p.innerHTML.split('<p class="post-summary">');
+      let text = t[1];
+      text = text.split("\n");
+      text = text.slice(0, 5);
+      text = text.join("</p><p class=\"post-summary\">");
+      p.innerHTML = t[0] + "<p class=\"post-summary\">" + text + "<p style=\"text-indent: 0em;color: #66ccff;\">「点击前往查看完整文章内容」</p>";
+    }
+  }
+})();
