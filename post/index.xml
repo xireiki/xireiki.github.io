@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on XiReiki</title>
+    <title>Posts on Ebrill</title>
     <link>https://ebrill.netlify.app/post/</link>
-    <description>Recent content in Posts on XiReiki</description>
+    <description>Recent content in Posts on Ebrill</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 18 Dec 2022 08:26:02 +0000</lastBuildDate><atom:link href="https://ebrill.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
