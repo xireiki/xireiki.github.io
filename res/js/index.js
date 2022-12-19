@@ -98,7 +98,7 @@ function legado(url, beh, path){
 }
 
 // hugo 主页修复
-if (location.pathname == "/"){
+if (location.pathname.startsWith("/")){
   let summary = document.querySelectorAll("a.post-link")
   for (let p of summary){
     let t = p.innerHTML.split('<p class="post-summary">');
