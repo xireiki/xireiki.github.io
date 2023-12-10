@@ -51,7 +51,7 @@ chmod 700 sing-box
 
 注意！私钥不能是加密的，不然 sing-box 不认。
 
-接着使用私钥生成证书请求 **csr.pem**，`openssl req -new -key key.pem -out cert.csr`
+接着使用私钥生成证书请求 **cert.csr**，`openssl req -new -key key.pem -out cert.csr`
 
 这个命令将会生成一个证书请求，当然，用到了前面生成的私钥 **key.pem** 文件。
 
