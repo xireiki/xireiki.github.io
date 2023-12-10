@@ -685,7 +685,7 @@ aside:
       link: https://github.com/xireiki
   card_announcement:
     enable: true
-    content: "暂时没有哦~ (ૢ˃ꌂ˂⁎)"
+    content: "TG频道: @xiayinlily"
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
