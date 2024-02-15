@@ -283,13 +283,13 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
-  text: true # Display the comment name next to the button
+  use: Disqusjs
+  text: false # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
-  count: false # Display comment count in post's top_img
-  card_post_count: false # Display comment count in Home Page
+  count: true # Display comment count in post's top_img
+  card_post_count: true # Display comment count in Home Page
 
 # disqus
 # https://disqus.com/
@@ -301,9 +301,10 @@ disqus:
 # DisqusJS 評論系統，可以實現在網路審查地區載入 Disqus 評論列表，兼容原版
 # https://github.com/SukkaW/DisqusJS
 disqusjs:
-  shortname:
-  apikey:
+  shortname: XiReiki
+  apikey: uXsUtK4qGNlA4TSZRjrEo3N9n9hn1ARxjmd5obWDgtMHSajVbfjWQjbOfNoBIsRf
   option:
+    admin: xireiki
 
 # livere (來必力)
 # https://www.livere.com/
@@ -342,7 +343,7 @@ waline:
 # utterances
 # https://utteranc.es/
 utterances:
-  repo:
+  repo: xireiki/xireiki.github.io
   # Issue Mapping: pathname/url/title/og:title
   issue_term: pathname
   # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
