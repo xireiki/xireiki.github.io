@@ -7,10 +7,10 @@ menu:
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  列表 || fas fa-list || hide:
+  # 列表 || fas fa-list || hide:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
-    书源: /book/ || fas fa-book
+  #   书源: /book/ || fas fa-book
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 
