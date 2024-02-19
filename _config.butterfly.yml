@@ -895,6 +895,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/res/css/index.css">
+    - <link rel="stylesheet" href="/res/css/custom.css">
     # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   bottom:
     - <script src="/res/js/jquery-3.6.0.min.js"></script>
