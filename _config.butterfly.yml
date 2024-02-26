@@ -365,7 +365,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://twikoo-xireiki.netlify.app/.netlify/functions/twikoo
+  envId: https://twikoo.xireiki.com/.netlify/functions/twikoo
   region: 
   visitor: true
   option:
