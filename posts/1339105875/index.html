@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>阅读添加番茄小黑屋书籍 | XiReiki</title><meta name="author" content="xireiki"><meta name="copyright" content="xireiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="题外话之前在 番茄小说书源分享 + 添加小黑屋书籍 简单的提到过在阅读添加番茄小黑屋的小说，但那只是顺便的，而且也不详细、明了，而且书源也没用针对性的优化，导致导入是有很多问题。 正好最近因为番茄源失效了，需要修复，在参考大佬们的做法后修复了原来的源，顺便添加了一点功能，看到自己的博客，想着便出一个教程，放在博客上。 其实本来打算直接搞个小工具直接解析的，但是我懒，于是随便找了个网页凑活凑活~诶嘿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅读添加番茄小黑屋书籍">
+<meta property="og:url" content="https://xireiki.com/posts/1339105875/index.html">
+<meta property="og:site_name" content="XiReiki">
+<meta property="og:description" content="题外话之前在 番茄小说书源分享 + 添加小黑屋书籍 简单的提到过在阅读添加番茄小黑屋的小说，但那只是顺便的，而且也不详细、明了，而且书源也没用针对性的优化，导致导入是有很多问题。 正好最近因为番茄源失效了，需要修复，在参考大佬们的做法后修复了原来的源，顺便添加了一点功能，看到自己的博客，想着便出一个教程，放在博客上。 其实本来打算直接搞个小工具直接解析的，但是我懒，于是随便找了个网页凑活凑活~诶嘿">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xireiki.com/res/img/top_image_5.jpg">
+<meta property="article:published_time" content="2023-03-11T14:18:30.000Z">
+<meta property="article:modified_time" content="2024-03-25T00:27:26.655Z">
+<meta property="article:author" content="xireiki">
+<meta property="article:tag" content="阅读">
+<meta property="article:tag" content="书源">
+<meta property="article:tag" content="番茄免费小说">
+<meta property="article:tag" content="小黑屋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xireiki.com/res/img/top_image_5.jpg"><link rel="shortcut icon" href="/res/img/logo.png"><link rel="canonical" href="https://xireiki.com/posts/1339105875/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":150},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: false,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '阅读添加番茄小黑屋书籍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-25 00:27:26'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/res/css/index.css"><link rel="stylesheet" href="/res/css/custom.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="XiReiki" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/res/img/top_image_5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="XiReiki"><span class="site-name">XiReiki</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">阅读添加番茄小黑屋书籍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-11T14:18:30.000Z" title="发表于 2023-03-11 14:18:30">2023-03-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-25T00:27:26.655Z" title="更新于 2024-03-25 00:27:26">2024-03-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Android/">Android</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Android/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/">番茄免费小说</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">801</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="阅读添加番茄小黑屋书籍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/1339105875/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>之前在 <a href="/posts/2947658518/">番茄小说书源分享 + 添加小黑屋书籍</a> 简单的提到过在阅读添加番茄小黑屋的小说，但那只是顺便的，而且也不详细、明了，而且书源也没用针对性的优化，导致导入是有很多问题。</p>
+<p>正好最近因为番茄源失效了，需要修复，在参考大佬们的做法后修复了原来的源，顺便添加了一点功能，看到自己的博客，想着便出一个教程，放在博客上。</p>
+<p><s>其实本来打算直接搞个小工具直接解析的，但是我懒，于是随便找了个网页凑活凑活~诶嘿~</s></p>
+<h2 id="导入书源"><a href="#导入书源" class="headerlink" title="导入书源"></a>导入书源</h2><p>第一步当然是<a href="javascript:legado(' rel="external nofollow noreferrer"/file/bookSource.json')">导入书源</a>啦~</p>
+<p>当然，只要导入“<code>番茄小说</code>”就可以了！</p>
+<h2 id="提取数据文件"><a href="#提取数据文件" class="headerlink" title="提取数据文件"></a>提取数据文件</h2><h3 id="方法一（需要root）"><a href="#方法一（需要root）" class="headerlink" title="方法一（需要root）"></a>方法一（需要root）</h3><p>使用<code>MT管理器</code>，打开 <code>/data/data/com.dragon.read/files/000000000000000</code> 文件夹(0表示数字，如果你没有登录多个账号，它只有一个)，复制文件名为 <code>reading_db_000000000000000</code> 的文件到一个不需要 root 也可以访问的目录，比如 <code>/storage/emulated/0/</code>。</p>
+<p><img src="20230311-142952.jpg" alt="复制"></p>
+<p>接着打开浏览器，访问 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.strerr.com/cn/sqliteviewer.html">SQLite在线查看</a>，选择并上传刚刚复制的文件 <code>reading_db_000000000000000</code>。</p>
+<p><img src="20230311_143537.jpg" alt="上传后"></p>
+<p>然后点击上方的选择框，选择 <code>t_book</code>: </p>
+<p><img src="20230311-143346.jpg" alt=""></p>
+<p>再接着找到你想添加到阅读的小黑屋书籍，复制 <code>book_id</code> 列的数字。</p>
+<p><img src="20230311_143631.jpg" alt=""></p>
+<p>替换链接中的 <code>【书籍ID】</code>: <code>https://api5-normal-lq.fqnovel.com/reading/bookapi/detail/v/?book_id=【书籍ID】&amp;iid=466614321180296&amp;aid=1967&amp;version_code=290</code>。</p>
+<p>最后，打开阅读，选择添加网址，填入刚刚替换后的链接。</p>
+<p>到此，一切大功告成！！(σ≧︎▽︎≦︎)σ。</p>
+<h3 id="方法二（免root）"><a href="#方法二（免root）" class="headerlink" title="方法二（免root）"></a>方法二（免root）</h3><p>注意：本方法只适用于 MIUI 系统（小米手机）！其他手机请自行摸索！</p>
+<p>打开备份于恢复，备份番茄免费小说：</p>
+<p><img src="20230311-150556.jpg" alt="备份"></p>
+<p>备份完成后用 MT管理器 打开如图所示文件夹，并点击“番茄免费小说”开头的文件，此时会进入压缩包预览。</p>
+<p><img src="20230311-145608.jpg" alt=""></p>
+<p>如果不想下载 MT管理器，也可以使用自带的文件管理，打开对应路径，修改文件夹，在最后添加 <code>.zip</code>，然后解压，我手机没空间就不解压了。</p>
+<p><img src="20230311-145403.jpg" alt=""></p>
+<p>打开压缩包后点击 <code>apps</code> 文件夹，再点击 <code>com.dragon.read</code> 文件夹，此时会看到一堆文件夹，找到最大的文件夹点进去！此时再点击 <code>files</code> 文件夹进入，如方法一种一样找到一个全是数字的文件夹点击进入。</p>
+<p>接着如图所示，找到类似文件名的文件，解压到一个不需要root也能访问的文件夹，比如 <code>/storage/emulated/0/</code>:</p>
+<p><img src="20230311-145529.jpg" alt="解压文件"></p>
+<p>接着打开浏览器，访问 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.strerr.com/cn/sqliteviewer.html">SQLite在线查看</a>，选择并上传刚刚复制的文件 <code>reading_db_000000000000000</code>。</p>
+<p><img src="20230311_143537.jpg" alt="上传后"></p>
+<p>然后点击上方的选择框，选择 <code>t_book</code>: </p>
+<p><img src="20230311-143346.jpg" alt=""></p>
+<p>再接着找到你想添加到阅读的小黑屋书籍，复制 <code>book_id</code> 列的数字。</p>
+<p><img src="20230311_143631.jpg" alt=""></p>
+<p>替换链接中的 <code>【书籍ID】</code>: <code>https://api5-normal-lq.fqnovel.com/reading/bookapi/detail/v/?book_id=【书籍ID】&amp;iid=466614321180296&amp;aid=1967&amp;version_code=290</code>。</p>
+<p>最后，打开阅读，选择添加网址，填入刚刚替换后的链接。</p>
+<p>到此，一切大功告成！！(σ≧︎▽︎≦︎)σ。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xireiki.com">xireiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xireiki.com/posts/1339105875/">https://xireiki.com/posts/1339105875/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xireiki.com" target="_blank">XiReiki</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%98%85%E8%AF%BB/">阅读</a><a class="post-meta__tags" href="/tags/%E4%B9%A6%E6%BA%90/">书源</a><a class="post-meta__tags" href="/tags/%E7%95%AA%E8%8C%84%E5%85%8D%E8%B4%B9%E5%B0%8F%E8%AF%B4/">番茄免费小说</a><a class="post-meta__tags" href="/tags/%E5%B0%8F%E9%BB%91%E5%B1%8B/">小黑屋</a></div><div class="post_share"><div class="social-share" data-image="/res/img/top_image_5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/1542838017/" title="神秘模块详细教程"><img class="cover" src="/res/img/top_image_5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">神秘模块详细教程</div></div></a></div><div class="next-post pull-right"><a href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍"><img class="cover" src="/res/img/top_image_2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">番茄小说书源分享 + 添加小黑屋书籍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍"><img class="cover" src="/res/img/top_image_2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-03</div><div class="title">番茄小说书源分享 + 添加小黑屋书籍</div></div></a></div><div><a href="/posts/3967353544/" title="番茄小说网"><img class="cover" src="/res/img/top_image_5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-24</div><div class="title">番茄小说网</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/res/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xireiki</div><div class="author-info__description">业余编程爱好者</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xireiki"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xireiki" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xiayinlily@outlook.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">TG频道: @xiayinlily</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="toc-number">1.</span> <span class="toc-text">题外话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E4%B9%A6%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">导入书源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">提取数据文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%88%E9%9C%80%E8%A6%81root%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">方法一（需要root）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%88%E5%85%8Droot%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">方法二（免root）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/3967353544/" title="番茄小说网"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="番茄小说网"/></a><div class="content"><a class="title" href="/posts/3967353544/" title="番茄小说网">番茄小说网</a><time datetime="2024-03-24T17:00:50.000Z" title="发表于 2024-03-24 17:00:50">2024-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3866594125/" title="记使用 sing-box 搭建 hysteria2 代理"><img src="/res/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记使用 sing-box 搭建 hysteria2 代理"/></a><div class="content"><a class="title" href="/posts/3866594125/" title="记使用 sing-box 搭建 hysteria2 代理">记使用 sing-box 搭建 hysteria2 代理</a><time datetime="2023-12-10T13:30:04.000Z" title="发表于 2023-12-10 13:30:04">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1542838017/" title="神秘模块详细教程"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神秘模块详细教程"/></a><div class="content"><a class="title" href="/posts/1542838017/" title="神秘模块详细教程">神秘模块详细教程</a><time datetime="2023-05-05T09:28:07.000Z" title="发表于 2023-05-05 09:28:07">2023-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1339105875/" title="阅读添加番茄小黑屋书籍"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阅读添加番茄小黑屋书籍"/></a><div class="content"><a class="title" href="/posts/1339105875/" title="阅读添加番茄小黑屋书籍">阅读添加番茄小黑屋书籍</a><time datetime="2023-03-11T14:18:30.000Z" title="发表于 2023-03-11 14:18:30">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍"><img src="/res/img/top_image_2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="番茄小说书源分享 + 添加小黑屋书籍"/></a><div class="content"><a class="title" href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍">番茄小说书源分享 + 添加小黑屋书籍</a><time datetime="2022-12-03T20:43:43.000Z" title="发表于 2022-12-03 20:43:43">2022-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By xireiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.xireiki.com/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.xireiki.com/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/res/js/jquery-3.6.0.min.js"></script><script src="/res/js/clipboard.min.js"></script><script src="/res/js/index.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

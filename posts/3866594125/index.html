@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记使用 sing-box 搭建 hysteria2 代理 | XiReiki</title><meta name="author" content="xireiki"><meta name="copyright" content="xireiki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="前言之前用一键脚本搭建过 trojan 代理，但是一键脚本我不太喜欢。 想起 sing-box 的入站支持好多协议，就想着用它搭建一下玩玩。 过程环境    项目 版本     debian 任意   sing-box v1.8.0-alpha.17     过程第一步，下载 sing-box从 GitHub 下载 sing-box 可执行文件。 我的服务器是 arm64 架构的 linux，所以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记使用 sing-box 搭建 hysteria2 代理">
+<meta property="og:url" content="https://xireiki.com/posts/3866594125/index.html">
+<meta property="og:site_name" content="XiReiki">
+<meta property="og:description" content="前言之前用一键脚本搭建过 trojan 代理，但是一键脚本我不太喜欢。 想起 sing-box 的入站支持好多协议，就想着用它搭建一下玩玩。 过程环境    项目 版本     debian 任意   sing-box v1.8.0-alpha.17     过程第一步，下载 sing-box从 GitHub 下载 sing-box 可执行文件。 我的服务器是 arm64 架构的 linux，所以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xireiki.com/res/img/default_cover.jpg">
+<meta property="article:published_time" content="2023-12-10T13:30:04.000Z">
+<meta property="article:modified_time" content="2024-03-25T00:27:26.655Z">
+<meta property="article:author" content="xireiki">
+<meta property="article:tag" content="sing-box">
+<meta property="article:tag" content="代理">
+<meta property="article:tag" content="hysteria2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xireiki.com/res/img/default_cover.jpg"><link rel="shortcut icon" href="/res/img/logo.png"><link rel="canonical" href="https://xireiki.com/posts/3866594125/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":150},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: false,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记使用 sing-box 搭建 hysteria2 代理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-25 00:27:26'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/res/css/index.css"><link rel="stylesheet" href="/res/css/custom.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="XiReiki" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/res/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/res/img/default_cover.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="XiReiki"><span class="site-name">XiReiki</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">记使用 sing-box 搭建 hysteria2 代理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-10T13:30:04.000Z" title="发表于 2023-12-10 13:30:04">2023-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-25T00:27:26.655Z" title="更新于 2024-03-25 00:27:26">2024-03-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BB%A3%E7%90%86/">代理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BB%A3%E7%90%86/%E6%90%AD%E5%BB%BA/">搭建</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BB%A3%E7%90%86/%E6%90%AD%E5%BB%BA/hysteria2/">hysteria2</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">952</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="记使用 sing-box 搭建 hysteria2 代理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/3866594125/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前用一键脚本搭建过 trojan 代理，但是一键脚本我不太喜欢。</p>
+<p>想起 sing-box 的入站支持好多协议，就想着用它搭建一下玩玩。</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">项目</th>
+<th style="text-align:center">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">debian</td>
+<td style="text-align:center">任意</td>
+</tr>
+<tr>
+<td style="text-align:center">sing-box</td>
+<td style="text-align:center">v1.8.0-alpha.17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><h3 id="第一步，下载-sing-box"><a href="#第一步，下载-sing-box" class="headerlink" title="第一步，下载 sing-box"></a>第一步，下载 sing-box</h3><p>从 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/SagerNet/sing-box/releases">GitHub</a> 下载 sing-box 可执行文件。</p>
+<p>我的服务器是 arm64 架构的 linux，所以下载 sing-box-1.8.0-alpha.17-linux-arm64.tar.gz</p>
+<p>下载后使用 tar 命令解压文件，从 sing-box-1.8.0-alpha.17-linux-arm64（每个版本不一样，解压后只有一个文件夹）中找到 sing-box 并复制到配置目录（我的是 <strong>/root/proxy</strong>）后给予执行权限，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /root/proxy</span><br><span class="line">wget https://github.com/SagerNet/sing-box/releases/download/v1.8.0-alpha.17/sing-box-1.8.0-alpha.17-linux-arm64.tar.gz</span><br><span class="line">tar -zxf sing-box-1.8.0-alpha.17-linux-arm64.tar.gz</span><br><span class="line"><span class="built_in">cp</span> sing-box-1.8.0-alpha.17-linux-arm64/sing-box /root/proxy</span><br><span class="line"><span class="built_in">cd</span> /root/proxy</span><br><span class="line"><span class="built_in">chmod</span> 700 sing-box</span><br></pre></td></tr></table></figure>
+<h3 id="第二步，生成-pem-私钥和-csr-证书"><a href="#第二步，生成-pem-私钥和-csr-证书" class="headerlink" title="第二步，生成 pem 私钥和 csr 证书"></a>第二步，生成 pem 私钥和 csr 证书</h3><p>先使用 <code>sudo apt install openssl</code> 安装 openssl，用于生成私钥和证书</p>
+<p>我把证书放在 /root/proxy/src 中，所以先创建文件夹: <code>mkdir -p /root/proxy/src</code></p>
+<p>使用 <code>cd /root/proxy/src</code> 进入文件夹。</p>
+<p>现在开始生成私钥，命令是这个 <code>openssl genpkey -algorithm RSA -out key.pem</code></p>
+<p>注意！私钥不能是加密的，不然 sing-box 不认。</p>
+<p>接着使用私钥生成证书请求 <strong>cert.csr</strong>，<code>openssl req -new -key key.pem -out cert.csr</code></p>
+<p>这个命令将会生成一个证书请求，当然，用到了前面生成的私钥 <strong>key.pem</strong> 文件。</p>
+<p>这里将生成一个新的文件 <strong>cert.csr</strong>，即一个证书请求文件，你可以拿着这个文件去数字证书颁发机构（即CA）申请一个数字证书。CA会给你一个新的文件 <strong>cert.pem</strong>，那才是你的数字证书。</p>
+<p>当然，我就自己用用，没必要去 CA 申请。所以我们可以使用私钥 <strong>key.pem</strong> 和证书请求 <strong>cert.csr</strong> 生成一个数字证书，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -<span class="keyword">in</span> cert.csr -signkey key.pem -out cert.pem -days 3650</span><br></pre></td></tr></table></figure>
+<p>使用这个命令会提示输入一些信息，比如国家等，按照提示输入即可。</p>
+<h3 id="第三步，写一个配置文件"><a href="#第三步，写一个配置文件" class="headerlink" title="第三步，写一个配置文件"></a>第三步，写一个配置文件</h3><p>我的配置文件名是 <strong>server.json</strong></p>
+<p>主要字段如下（…表示省略）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;inbounds&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hysteria2&quot;</span><span class="punctuation">,</span> <span class="comment">// 入站类型</span></span><br><span class="line">      <span class="attr">&quot;tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hy2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;listen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;::&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;listen_port&quot;</span><span class="punctuation">:</span> <span class="number">1081</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;sniff&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;sniff_override_destination&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;domain_strategy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;prefer_ipv6&quot;</span><span class="punctuation">,</span> <span class="comment">// ipv6 优先</span></span><br><span class="line">      <span class="attr">&quot;up_mbps&quot;</span><span class="punctuation">:</span> <span class="number">1000</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;down_mbps&quot;</span><span class="punctuation">:</span> <span class="number">1000</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;users&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;root&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abd12de3&quot;</span> <span class="comment">// 认证密码</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;certificate_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;src/cert.crt&quot;</span><span class="punctuation">,</span> <span class="comment">// 证书路径</span></span><br><span class="line">        <span class="attr">&quot;key_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;src/key.pem&quot;</span> <span class="comment">// 私钥路径</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>具体配置可参考 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://sing-box.sagernet.org/zh">sing-box wiki</a></p>
+<h3 id="第四步，使用-systemd-开机自启"><a href="#第四步，使用-systemd-开机自启" class="headerlink" title="第四步，使用 systemd 开机自启"></a>第四步，使用 systemd 开机自启</h3><p>在 <strong>/etc/systemd/system/myproxy.service</strong> 创建一个文件（myproxy.service），内容如下（根据实际情况修改）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=sing-box Proxy</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/root/proxy</span><br><span class="line">ExecStart=/root/proxy/sing-box -D /root/proxy -c /root/proxy/server.json run</span><br><span class="line">Restart=always</span><br></pre></td></tr></table></figure>
+<p>接着使用 <code>systemctk enable myproxy</code> 命令启用开机自启。</p>
+<h3 id="第五步，配置客户端出站"><a href="#第五步，配置客户端出站" class="headerlink" title="第五步，配置客户端出站"></a>第五步，配置客户端出站</h3><p>sing-box:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;outbounds&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;MyProxy&quot;</span><span class="punctuation">,</span> <span class="comment">// 出站名称，任意皆可</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hysteria2&quot;</span><span class="punctuation">,</span> <span class="comment">// 不能改，出站类型</span></span><br><span class="line">      <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xxx.xxx.xxx.xxx&quot;</span><span class="punctuation">,</span> <span class="comment">// 此处替换为你服务器IP地址</span></span><br><span class="line">      <span class="attr">&quot;server_port&quot;</span><span class="punctuation">:</span> <span class="number">1081</span><span class="punctuation">,</span> <span class="comment">// 你设置的端口</span></span><br><span class="line">      <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;abd12de3&quot;</span><span class="punctuation">,</span> <span class="comment">// 认证密码，输入你在 server.json 中配置的</span></span><br><span class="line">      <span class="attr">&quot;tls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;insecure&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;down_mbps&quot;</span><span class="punctuation">:</span> <span class="number">1000</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>clash.meta:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">proxies:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">MyProxy</span> <span class="comment">#名称任意</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">hysteria2</span></span><br><span class="line">    <span class="attr">server:</span> <span class="string">xxx.xxx.xxx.xxx</span> <span class="comment"># 服务器IP地址</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">1081</span> <span class="comment"># 你设置的端口</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">abd12de3</span> <span class="comment"># 认证密码</span></span><br><span class="line">    <span class="attr">insecure:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">down:</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>愉快的开始使用吧！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xireiki.com">xireiki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xireiki.com/posts/3866594125/">https://xireiki.com/posts/3866594125/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xireiki.com" target="_blank">XiReiki</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sing-box/">sing-box</a><a class="post-meta__tags" href="/tags/%E4%BB%A3%E7%90%86/">代理</a><a class="post-meta__tags" href="/tags/hysteria2/">hysteria2</a></div><div class="post_share"><div class="social-share" data-image="/res/img/default_cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/3967353544/" title="番茄小说网"><img class="cover" src="/res/img/top_image_5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">番茄小说网</div></div></a></div><div class="next-post pull-right"><a href="/posts/1542838017/" title="神秘模块详细教程"><img class="cover" src="/res/img/top_image_5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">神秘模块详细教程</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/res/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xireiki</div><div class="author-info__description">业余编程爱好者</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xireiki"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xireiki" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xiayinlily@outlook.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">TG频道: @xiayinlily</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B-1"><span class="toc-number">2.2.</span> <span class="toc-text">过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E4%B8%8B%E8%BD%BD-sing-box"><span class="toc-number">2.2.1.</span> <span class="toc-text">第一步，下载 sing-box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E7%94%9F%E6%88%90-pem-%E7%A7%81%E9%92%A5%E5%92%8C-csr-%E8%AF%81%E4%B9%A6"><span class="toc-number">2.2.2.</span> <span class="toc-text">第二步，生成 pem 私钥和 csr 证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C%E5%86%99%E4%B8%80%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.3.</span> <span class="toc-text">第三步，写一个配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%8C%E4%BD%BF%E7%94%A8-systemd-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="toc-number">2.2.4.</span> <span class="toc-text">第四步，使用 systemd 开机自启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%8C%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%87%BA%E7%AB%99"><span class="toc-number">2.2.5.</span> <span class="toc-text">第五步，配置客户端出站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90"><span class="toc-number">2.2.6.</span> <span class="toc-text">完成</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/3967353544/" title="番茄小说网"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="番茄小说网"/></a><div class="content"><a class="title" href="/posts/3967353544/" title="番茄小说网">番茄小说网</a><time datetime="2024-03-24T17:00:50.000Z" title="发表于 2024-03-24 17:00:50">2024-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3866594125/" title="记使用 sing-box 搭建 hysteria2 代理"><img src="/res/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记使用 sing-box 搭建 hysteria2 代理"/></a><div class="content"><a class="title" href="/posts/3866594125/" title="记使用 sing-box 搭建 hysteria2 代理">记使用 sing-box 搭建 hysteria2 代理</a><time datetime="2023-12-10T13:30:04.000Z" title="发表于 2023-12-10 13:30:04">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1542838017/" title="神秘模块详细教程"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神秘模块详细教程"/></a><div class="content"><a class="title" href="/posts/1542838017/" title="神秘模块详细教程">神秘模块详细教程</a><time datetime="2023-05-05T09:28:07.000Z" title="发表于 2023-05-05 09:28:07">2023-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1339105875/" title="阅读添加番茄小黑屋书籍"><img src="/res/img/top_image_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阅读添加番茄小黑屋书籍"/></a><div class="content"><a class="title" href="/posts/1339105875/" title="阅读添加番茄小黑屋书籍">阅读添加番茄小黑屋书籍</a><time datetime="2023-03-11T14:18:30.000Z" title="发表于 2023-03-11 14:18:30">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍"><img src="/res/img/top_image_2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="番茄小说书源分享 + 添加小黑屋书籍"/></a><div class="content"><a class="title" href="/posts/2947658518/" title="番茄小说书源分享 + 添加小黑屋书籍">番茄小说书源分享 + 添加小黑屋书籍</a><time datetime="2022-12-03T20:43:43.000Z" title="发表于 2022-12-03 20:43:43">2022-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By xireiki</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.xireiki.com/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.xireiki.com/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/res/js/jquery-3.6.0.min.js"></script><script src="/res/js/clipboard.min.js"></script><script src="/res/js/index.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
