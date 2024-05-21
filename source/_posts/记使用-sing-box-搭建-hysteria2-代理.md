@@ -121,7 +121,7 @@ ExecStart=/root/proxy/sing-box -D /root/proxy -c /root/proxy/server.json run
 Restart=always
 ```
 
-接着使用 `systemctk enable myproxy` 命令启用开机自启。
+接着使用 `systemctl enable myproxy` 命令启用开机自启。
 
 ### 第五步，配置客户端出站
 
