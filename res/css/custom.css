@@ -1,0 +1,65 @@
+#aside-content .card-widget,#recent-posts>.recent-post-item,div#archive,div#page,div#post {
+	background:rgba(255,255,255,.58);
+	backdrop-filter:blur(5px) saturate(150%)
+}
+#recent-posts>.recent-post-item {
+	border-radius:25px
+}
+#aside-content .card-widget {
+	border-radius:18px
+}
+div#archive,div#page,div#post {
+	border-radius:20px
+}
+[data-theme=dark] #aside-content .card-widget,[data-theme=dark] #recent-posts>.recent-post-item,[data-theme=dark] div#archive,[data-theme=dark] div#page,[data-theme=dark] div#post {
+	background:rgba(25,25,25,.88);
+	border:1px solid #a9a9a9
+}
+.read-mode #aside-content .card-widget,.read-mode div#post {
+	background:rgba(158,204,171,.5)!important
+}
+[data-theme=dark] .read-mode #aside-content .card-widget,[data-theme=dark] .read-mode div#post {
+	background:rgba(25,25,25,.9)!important;
+	color:#fff
+}
+#aside-content>.card-widget.card-info {
+	background-repeat:no-repeat;
+	background-attachment:inherit;
+	background-size:100%
+}
+[data-theme=light] #aside-content>.card-widget.card-info {
+	background-image:url(https://sourcebucket.s3.bitiful.net/img/aurora.webp)
+}
+[data-theme=dark] #aside-content>.card-widget.card-info {
+	background-image:url(https://sourcebucket.s3.bitiful.net/img/aurora.webp)
+}
+::-webkit-scrollbar {
+	width:8px;
+	height:8px
+}
+::-webkit-scrollbar-track {
+	background-color:rgba(73,177,245,.2);
+	border-radius:2em
+}
+::-webkit-scrollbar-thumb {
+	background-color:var(--theme-color);
+	background-image:-webkit-linear-gradient(45deg,#2185ad 25%,transparent 25%,transparent 50%,#2185ad 50%,#2185ad 75%,transparent 75%,transparent);
+	border-radius:2em
+}
+::-webkit-scrollbar-corner {
+	background-color:transparent
+}
+::-moz-selection {
+	color:#fff;
+	background-color:var(--theme-color)
+}
+#nav .menus_items {
+	position:absolute!important;
+	width:fit-content!important;
+	left:50%!important;
+	transform:translateX(-50%)!important
+}
+@font-face {
+	font-family:ZhuZiAWan2;
+	src:url('https://sourcebucket.s3.bitiful.net/fonts/ZhuZiAWan2.woff2')
+}
